@@ -6,17 +6,18 @@ import { GA_TRACKING_ID } from '../lib/gtag'
 export default class extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+    const lang = ctx?.query?.lang || 'en-US';  // Default to 'en-US' if lang is undefined
+    return { ...initialProps, lang }
   }
 
   render() {
-    const lang = this.props.__NEXT_DATA__.props.pageProps?.post?.lang
+    const { lang } = this.props;
 
     return (
-      <Html lang={lang ? lang : 'en-US'}>
+      <Html lang={lang}>
         <Head>
           <meta charSet="utf-8" />
-          <meta content="Zeno Rocha" name="author" />
+          <meta content="Utsav Shrestha" name="author" />
           <meta property="og:type" content="website" />
           <meta content="summary_large_image" name="twitter:card" />
           <meta name="theme-color" content="#08070b" />
@@ -39,17 +40,17 @@ export default class extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}');
-          `,
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_TRACKING_ID}');
+              `,
             }}
           />
         </Head>
         <Main />
         <NextScript />
       </Html>
-    )
+    );
   }
 }

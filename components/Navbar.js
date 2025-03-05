@@ -184,6 +184,9 @@ const NavContainer = styled(motion.span, {
     opacity: 0,
     transition: 'opacity $duration ease-in-out',
   },
+  '&:hover::after': {
+    opacity: 1, /* Make the line visible on hover */
+  }
 })
 
 const NavHovered = styled(motion.span, {

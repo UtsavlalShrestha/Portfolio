@@ -12,7 +12,7 @@ import {
   KBarSearch,
   KBarResults,
 } from 'kbar'
-import Lottie from 'lottie-react'
+// import Lottie from 'lottie-react'
 import copyLinkIcon from '../public/static/icons/copy-link.json'
 import emailIcon from '../public/static/icons/email.json'
 import sourceIcon from '../public/static/icons/source.json'
@@ -25,6 +25,10 @@ import podcastsIcon from '../public/static/icons/podcasts.json'
 import investingIcon from '../public/static/icons/investing.json'
 import usesIcon from '../public/static/icons/uses.json'
 import reminderIcon from '../public/static/icons/reminder.json'
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+
 
 export default function CommandBar(props) {
   const copyLinkRef = useRef()
@@ -75,7 +79,7 @@ export default function CommandBar(props) {
       keywords: 'view-source',
       section: 'General',
       perform: () =>
-        window.open('https://github.com/zenorocha/zenorocha.com', '_blank'),
+        window.open('https://github.com/UtsavlalShrestha', '_blank'),
       icon: <Lottie lottieRef={sourceRef} style={iconSize} animationData={sourceIcon} loop={false} autoplay={false} />,
     },
     {

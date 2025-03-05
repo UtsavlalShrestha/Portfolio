@@ -8,26 +8,26 @@ export default function Footer() {
       url: '/contact',
       icon: 'ri-mail-line',
     },
-    {
-      title: 'Twitter',
-      url: 'https://twitter.com/zenorocha',
-      icon: 'ri-twitter-line',
-    },
+    // {
+    //   title: 'Twitter',
+    //   url: 'https://twitter.com/zenorocha',
+    //   icon: 'ri-twitter-line',
+    // },
     {
       title: 'GitHub',
-      url: 'https://github.com/zenorocha',
+      url: 'https://github.com/UtsavlalShrestha',
       icon: 'ri-github-line',
     },
     {
       title: 'linkedin',
-      url: 'https://linkedin.com/in/zenorocha',
+      url: 'https://www.linkedin.com/in/utsavlalshrestha/',
       icon: 'ri-linkedin-line',
     },
-    {
-      title: 'Instagram',
-      url: 'https://instagram.com/zenorocha',
-      icon: 'ri-instagram-line',
-    },
+    // {
+    //   title: 'Instagram',
+    //   url: 'https://instagram.com/zenorocha',
+    //   icon: 'ri-instagram-line',
+    // },
   ]
 
   const renderAnchor = (link, index) => {
